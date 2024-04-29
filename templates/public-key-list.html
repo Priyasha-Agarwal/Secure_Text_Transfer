@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Key List</title>
+    <style>
+        body {
+            background-color: #19616d;
+            font-family: Arial, sans-serif;
+        }
+
+        .key-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .key {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 200px; /* Adjust size as needed */
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-arrow {
+            font-family: "Arial Unicode MS", sans-serif;
+            transform: rotateY(180deg);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Download the Required Public Key</h1>
+    <div class="key-container">
+        {% set index = 0 %}
+        {% for username in directory %}
+        <div class="key">
+            {% if index % 2 == 0 %}
+            <i class="arrow" onclick="window.location.href='/public-key-directory/retrieve/key/{{ username }}'">&#8594;</i>
+            {% else %}
+            <i class="arrow left-arrow" onclick="window.location.href='/public-key-directory/retrieve/key/{{ username }}'">&#8592;</i>
+            {% endif %}
+            <span class="name">{{ username }}</span>
+        </div>
+        {% set index = index + 1 %}
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+

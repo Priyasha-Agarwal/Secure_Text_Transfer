@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+		.Navbar ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #19616d;
+	}
+	
+	li {
+		float: left;
+	}
+	
+	li:last-child {
+		border-right: none;
+	}
+	
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+	
+	li a:hover:not(.active) {
+		background-color:#19616d;
+	}
+	
+	.active {
+		background-color: #19616d;
+	} 
+		body{
+			margin: 0px;
+		}
+        img {
+            width: 100%;
+            height: auto;
+        }
+	
+	/* Clarity	 */
+	#services{
+    padding: 30px 0;
+	} 
+
+	.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+	}
+
+	.index_img{
+	display: block;
+  	margin-left: auto;
+ 	margin-right: auto;
+  	width: 50%;
+	}
+    </style>
+</head>
+<body>
+	<!-- Navbar -->
+		<div class="Navbar">
+			<ul>
+				<li><a href="{{ url_for('index') }}">Home</a></li>
+        		<li><a href="{{ url_for('rules') }}">Rules</a></li>
+			</ul>
+		</div>
+    <img src="{{ url_for('static', filename='Home.png') }}" alt="Homepage">
+
+	<!-- Clarity Section -->
+<div id="services">
+<div class="w3-padding-64 w3-light-grey">
+	<div class="w3-row-padding">
+	  <div class="w3-col l4 m6">
+	  </div>
+	  <div class="w3-col">
+		<h1 class="w3-jumbo" style = "text-align:center;"><b>Start Transfering</b></h1>
+		<h1 class="w3-xxxlarge w3-text-red" style = "text-align:center;"><b>What are my options?</b></h1>
+		<div class="services-list">
+		<div>
+			<i class="fa fa-cloud-upload"></i>
+			<h2 style="color: black;">Upload File</h2>
+			<a href="{{ url_for('call_page_upload') }}"><button>Upload File</button></a>
+		</div>
+		<div>
+			<i class="fa fa-folder-open"></i>
+			<h2 style="color: black;">File Directory</h2>
+			<a href="{{ url_for('download_f') }}"><button>File Directory</button></a>
+		</div>
+		<div>
+			<i class="fa fa-key"></i>
+			<h2 style="color: black;">Public Key</h2>
+			<a href="{{ url_for('downloads_pk') }}"><button>Download Public Key</button></a>
+		</div>	
+	</div>
+	</div>
+	  </div>
+	</div>
+  </div>
+
+  <!-- Algorithm Section -->
+  <br>
+  <br>
+  <div>
+	<h1 style="text-align: center;"> <b>Welcome to Cloud</b></h1>
+	<br>
+	<br>
+	<img class = "index_img" src="../static/cloud.jpg" alt="Diffie-Hellman">
+  </div>
+
+</body>
+</html>
+
+
+
+
+

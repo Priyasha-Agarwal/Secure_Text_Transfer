@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key</title>
+</head>
+<body>
+    <h3>Your one-time generated public key is:</h3>
+    <p><strong id="generated-key"></strong></p>
+    <p style="color: red; font-size: 18px"><b>Note: Copy and save this key. For safety purposes, we keep no backup of this key. Refrain from sharing this key.</b></p>
+
+    <script>
+        // Get the element where the key will be displayed
+        var keyElement = document.getElementById("generated-key");
+
+        // Generate a random key of length 16
+        var randomKey = generateRandomKey(16);
+
+        // Insert the generated key into the HTML
+        keyElement.textContent = randomKey;
+
+        // Function to generate a random key
+        function generateRandomKey(length) {
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var result = '';
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+    </script>
+    <!-- <p>{{ msg }}</p> -->
+    <!-- Add more error handling content if needed -->
+</body>
+</html>
